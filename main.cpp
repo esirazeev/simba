@@ -4,6 +4,7 @@
 #include <timer.hpp>
 
 #include "pcap/reader/reader.hpp"
+// #include "build/release/_deps/pcap_reader-src/pcap/reader/reader.hpp"
 
 void print_packets_in_range(uint64_t packet_from, uint64_t packet_to = std::numeric_limits<uint64_t>::max())
 {
@@ -16,6 +17,9 @@ void print_packets_in_range(uint64_t packet_from, uint64_t packet_to = std::nume
 
 	while (reader.readPackets() < packet_to and reader.readNextPacket(packet))
 		;
+
+	std::ofstream file("osi_bin_packet_data");
+	file.write(reinterpret_cast<const char*>(packet.data().data()), packet.data().size());
 
 	timer_stop();
 

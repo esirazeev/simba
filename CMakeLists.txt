@@ -5,13 +5,13 @@ project("simba_spectra_parser")
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-include(FetchContent)
-FetchContent_Declare(
-  pcap_reader
-  GIT_REPOSITORY https://github.com/esirazeev/pcap_reader.git
-  GIT_TAG        main
-)
-FetchContent_MakeAvailable(pcap_reader)
+# include(FetchContent)
+# FetchContent_Declare(
+#   pcap_reader
+#   GIT_REPOSITORY https://github.com/esirazeev/pcap_reader.git
+#   GIT_TAG        main
+# )
+# FetchContent_MakeAvailable(pcap_reader)
 
 # file(GLOB_RECURSE SIMBA_PARSER_SOURCES "simba_parser/*.cpp")
 # add_executable(simba_spectra_parser main.cpp ${SIMBA_PARSER_SOURCES})
